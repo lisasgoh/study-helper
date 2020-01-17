@@ -11,7 +11,7 @@ export class Home extends Component {
     const {navigate} = this.props.navigation;
     return (
       <View>
-          <Text style= {styles.container}>Welcome to Lecture Assistant!</Text>
+          <Text style= {styles.container}>Welcome to Study Helper!</Text>
           <Button title="Go to Module Screen" onPress={() => navigate('Modules')}
           />
       </View>

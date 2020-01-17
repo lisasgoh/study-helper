@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
+import { StyleSheet, View, Text, TextInput } from 'react-native';
 //import {createAppContainer} from 'react-navigation';
 //import {createStackNavigator} from 'react-navigation-stack';
+import { Button, Input } from 'react-native-elements';
 
 export class Login extends Component {
   static navigationOptions = {
-    title: 'Login',
+    title: 'Login to Study Helper',
   };
   state = {
     username: '',
@@ -18,25 +19,27 @@ export class Login extends Component {
     this.setState({ password });
   };
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     const { username } = this.state;
     const { password } = this.state;
     return (
       <View style={styles.screen} >
         <View style={styles.inputContainer}>
-            <TextInput 
-                placeholder= "Username" 
-                style={styles.input} 
-                onChangeText={this.usernameHandler} 
-                value={username}
-            />
-            <TextInput 
-                placeholder= "Password" 
-                style={styles.input} 
-                onChangeText={this.passwordHandler} 
-                value={password}
-            />
-            <Button title="Login" onPress={() => navigate('Modules')} />
+          <Input
+            placeholder="Username"
+            containerStyle={styles.input2}
+            //inputContainerStyle={styles.input}
+            onChangeText={this.usernameHandler}
+            value={username}
+          />
+          <Input
+            placeholder="Password"
+            containerStyle={styles.input2}
+            //inputContainerStyle={styles.input}
+            onChangeText={this.passwordHandler}
+            value={password}
+          />
+          <Button title="Login" onPress={() => navigate('Modules')} containerStyle={styles.login} />
         </View>
       </View>
     );
@@ -44,22 +47,31 @@ export class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-    screen: {
-        padding: 50
-    },
-    inputContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-    },
-    input: {
-        position: 'absolute',
-        width: '80%',
-        borderColor: 'black',
-        borderWidth: 1,
-        top: 0,
-        left: 0
-    }
-  })
+  screen: {
+    marginTop: 80,
+    marginHorizontal:20
+  },
+  inputContainer: {
+    flex: 0,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  input: {
+    
+    fontSize: 20,
+    //flex:10,
+    //padding:10
+  },
+  input2: {
+    marginTop: 80,
+    //alignItems: 'stretch',
+  },
+  login: {
+    marginTop: 80,
+    alignSelf: 'stretch',
+    height: 1
+
+  }
+})
 
 export default Login;
