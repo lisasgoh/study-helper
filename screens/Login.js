@@ -38,6 +38,7 @@ export class Login extends Component {
           <Input
             placeholder="Password"
             containerStyle={styles.input2}
+            secureTextEntry={true}
             //inputContainerStyle={styles.input}
             onChangeText={this.passwordHandler}
             value={password}
