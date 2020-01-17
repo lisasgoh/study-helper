@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button,ScrollView } from 'react-native';
 import bg from '../assets/splashoverlay.png' // set image path
 const cz2002 = [
     {
@@ -155,10 +155,10 @@ export class Transcript extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
           {this.state.tableHead.map((time) => <Text style={styles.text}>{time}</Text>)}
           
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     padding: 10,
     //backgroundColor: '#fff',
     //alignItems: 'left',
-    justifyContent: 'center',
+    //justifyContent: 'center',
   },
   text:{
     fontSize: 15
