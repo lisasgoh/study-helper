@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
-import { Table, Row, Rows} from 'react-native-table-component';
+
 //import {createAppContainer} from 'react-navigation';
 //import {createStackNavigator} from 'react-navigation-stack';
 const cz2002 = [
@@ -38,24 +38,14 @@ export class Info extends Component {
   };
   constructor(props) {
     super(props);
-    const lesson = props.navigation.state.params.lesson;
-    this.state = {
-      data: cz2002, //if {} => object, now is array of json objects
-      tableHead:  Object.keys(cz2002[lesson]["slides"]),
-      tableData:  Object.values(cz2002[lesson]["slides"]),
-      link: cz2002[lesson]["link"]
-    };
   }
   render() {
     const {navigate} = this.props.navigation;
     console.log(Object.keys(cz2002[this.props.navigation.state.params.lesson]["slides"]));
     return (
       <View>
-          <Button title="Load Transcript" onPress={() => console.log("Hi")} />
-          <View>
-            {this.state.tableHead.map((slide) => <Text> {slide} </Text>)}
-            {this.state.tableData.map((slide) => <Text> {slide} </Text>)}
-          </View>
+          <Button title="Full Transcript" onPress={() => navigate('Transcript', {lesson: this.props.navigation.state.params.lesson})} />
+          <Button title="Slides" onPress={() => navigate('Slides', {lesson: this.props.navigation.state.params.lesson})} />
       </View>
     );
   }

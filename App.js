@@ -10,6 +10,8 @@ import ModuleScreen from './screens/Modules';
 import LoginScreen from './screens/Login';
 import LessonScreen from './screens/Lessons';
 import InfoScreen from './screens/Info';
+import SlidesScreen from './screens/Slides';
+import TranscriptScreen from './screens/Transcript';
 
 
 const MainNavigator = createStackNavigator({
@@ -18,7 +20,9 @@ const MainNavigator = createStackNavigator({
   Modules: {screen: ModuleScreen},
   Search: {screen: SearchScreen},
   Lesson: {screen: LessonScreen},
-  Info: {screen: InfoScreen}
+  Info: {screen: InfoScreen},
+  Slides: {screen: SlidesScreen},
+  Transcript: {screen: TranscriptScreen}
 });
 
 const AppContainer = createAppContainer(MainNavigator);
