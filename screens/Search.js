@@ -115,9 +115,11 @@ export class Search extends Component {
   renderHeader = () => {
     return (
       <SearchBar
+      style={styles.searchbar}
         placeholder="Type Here..."
         onChangeText={text => this.searchFilterFunction(text)}
         value={this.state.value}
+        
       />
     );
   };
@@ -174,6 +176,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
+  },
+  searchbar: {
+    marginBottom: 50,
   }
 });
 
