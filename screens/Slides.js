@@ -39,7 +39,7 @@ export class Transcript extends Component {
     const lesson = props.navigation.state.params.lesson;
     this.state = {
       data: cz2002, //if {} => object, now is array of json objects
-      tableHead:  Object.keys(cz2002[lesson]["slides"]),
+      tableHead:  Object.entries(cz2002[lesson]["slides"]),
       tableData:  Object.values(cz2002[lesson]["slides"]),
       link: cz2002[lesson]["link"]
     };
