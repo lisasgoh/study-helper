@@ -51,7 +51,7 @@ export class Login extends Component {
 
 const styles = StyleSheet.create({
   screen: {
-    marginTop: 80,
+    marginTop: 170,
     marginHorizontal:20
   },
   inputContainer: {
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     //padding:10
   },
   input2: {
-    marginTop: 80,
+    marginTop: 30,
     //alignItems: 'stretch',
   },
   login: {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { Button } from 'react-native-elements'
 
 //import {createAppContainer} from 'react-navigation';
 //import {createStackNavigator} from 'react-navigation-stack';
@@ -43,9 +44,9 @@ export class Info extends Component {
     const {navigate} = this.props.navigation;
     console.log(Object.keys(cz2002[this.props.navigation.state.params.lesson]["slides"]));
     return (
-      <View>
-          <Button title="Full Transcript" onPress={() => navigate('Transcript', {lesson: this.props.navigation.state.params.lesson})} />
-          <Button title="Slides" onPress={() => navigate('Slides', {lesson: this.props.navigation.state.params.lesson})} />
+      <View style={styles.container}>
+          <Button title="Full Transcript" containerStyle={styles.button} onPress={() => navigate('Transcript', {lesson: this.props.navigation.state.params.lesson})} />
+          <Button title="Slides" containerStyle={styles.button} onPress={() => navigate('Slides', {lesson: this.props.navigation.state.params.lesson})} />
       </View>
     );
   }
@@ -53,10 +54,14 @@ export class Info extends Component {
 const styles = StyleSheet.create({
   container: {
     //flex: 1,
+    padding:10
     //backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
   },
+  button: {
+    marginTop: 80
+  }
 });
 
 export default Info;
