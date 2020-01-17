@@ -5,9 +5,9 @@ const cz2002 = [
     {
     "week": "1",
     "transcript": {
-        "0:00:00": "she sells sea shells by the sea shore",
-        "0:00:10": "pineapple pen",
-        "0:00:20": "peter piper picked a peck of pickled pepper"
+        "0:00:00": ": she sells sea shells by the sea shore",
+        "0:00:10": ": pineapple pen",
+        "0:00:20": ": peter piper picked a peck of pickled pepper"
     },
     "slides": {
         "Slide 1": "0:00:00",
@@ -39,15 +39,15 @@ export class Transcript extends Component {
     const lesson = props.navigation.state.params.lesson;
     this.state = {
       data: cz2002, //if {} => object, now is array of json objects
-      tableHead:  Object.keys(cz2002[lesson]["transcript"]),
+      tableHead:  Object.entries(cz2002[lesson]["transcript"]),
       tableData:  Object.values(cz2002[lesson]["transcript"]),
     };
   }
   render() {
     return (
-      <View>
-          {this.state.tableHead.map((time) => <Text>{time}</Text>)}
-          {this.state.tableData.map((words) => <Text>{words}</Text>)}
+      <View style={styles.container}>
+          {this.state.tableHead.map((time) => <Text style={styles.text}>{time}</Text>)}
+          
       </View>
     );
   }
@@ -55,10 +55,14 @@ export class Transcript extends Component {
 const styles = StyleSheet.create({
   container: {
     //flex: 1,
+    padding: 10,
     //backgroundColor: '#fff',
-    alignItems: 'center',
+    //alignItems: 'left',
     justifyContent: 'center',
   },
+  text:{
+    fontSize: 15
+  }
 });
 
 export default Transcript;

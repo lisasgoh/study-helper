@@ -46,9 +46,8 @@ export class Transcript extends Component {
   }
   render() {
     return (
-        <View>
-            {this.state.tableHead.map((slide) => <Text> {slide} </Text>)}
-            {this.state.tableData.map((slide) => <Text> {slide} </Text>)}
+        <View style={styles.container}>
+            {this.state.tableHead.map((slide) => <Text style={styles.text}> {slide} </Text>)}
       </View>
     );
   }
@@ -56,10 +55,14 @@ export class Transcript extends Component {
 const styles = StyleSheet.create({
   container: {
     //flex: 1,
+    marginTop: 30,
     //backgroundColor: '#fff',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
   },
+  text:{
+    fontSize: 30
+  }
 });
 
 export default Transcript;
