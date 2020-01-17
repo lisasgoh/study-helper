@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput } from 'react-native';
+import { StyleSheet, View, Text, TextInput,ImageBackground } from 'react-native';
 //import {createAppContainer} from 'react-navigation';
 //import {createStackNavigator} from 'react-navigation-stack';
 import { Button, Input } from 'react-native-elements';
-
+import bg from '../assets/splashoverlay.png' // set image path
 export class Login extends Component {
   static navigationOptions = {
     title: 'Login to Study Helper',
@@ -23,7 +23,10 @@ export class Login extends Component {
     const { username } = this.state;
     const { password } = this.state;
     return (
+      <ImageBackground source={bg} style={{width: '100%', height: '100%'}}>
+       
       <View style={styles.screen} >
+        
         <View style={styles.inputContainer}>
           <Input
             placeholder="Username"
@@ -41,7 +44,7 @@ export class Login extends Component {
           />
           <Button title="Login" onPress={() => navigate('Modules')} containerStyle={styles.login} />
         </View>
-      </View>
+      </View></ImageBackground>
     );
   }
 }
@@ -72,6 +75,7 @@ const styles = StyleSheet.create({
     height: 1
 
   }
+  
 })
 
 export default Login;
